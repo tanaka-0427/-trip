@@ -37,7 +37,30 @@ body{
 .logo.small img{
   width:55px;
 }
+.lang{
+  position:fixed;
+  top:20px;
+  right:20px;
+  z-index:1000;
+  display:flex;
+  gap:8px;
+}
 
+.lang a,
+.menu-btn{
+  font-size:14px;
+  padding:6px 12px;
+  border-radius:6px;
+  background:#2b5f73;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+.menu-btn{
+  font-size:18px;
+  line-height:1;
+}
 /* ===== 言語切替 ===== */
 .lang{
   position:fixed;
@@ -156,19 +179,46 @@ footer{
     padding:80px 15px 40px;
   }
 }
+  .menu{
+  position:fixed;
+  top:60px;
+  right:20px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  padding:10px;
+  display:none;
+  z-index:1000;
+}
+.menu a{
+  display:block;
+  padding:10px 15px;
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
+}
+.menu a:hover{
+  background:#f6f1ec;
+}
 </style>
 </head>
 
 <body>
 
 <!-- ロゴ -->
-<div class="logo" id="logo">
+<a href="#" class="logo" id="logo">
   <img src="images/logo.png" alt="Trip ロゴ">
-</div>
-
+</a>
+<nav class="menu" id="menu">
+  <a href="#service">サービス内容</a>
+  <a href="#price">料金</a>
+  <a href="#video">動画</a>
+  <a href="#contact">お問い合わせ</a>
+</nav>
 <!-- 言語 -->
 <div class="lang">
-  <a href="index-en.html">EN</a>
+  <a href="index-en.html" class="lang-btn">EN</a>
+  <button class="menu-btn" id="menuBtn">☰</button>
 </div>
 
 <div class="container">
@@ -258,9 +308,17 @@ window.addEventListener("scroll",()=>{
   }
 });
 </script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
 
+menuBtn.addEventListener("click", () => {
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+});
+</script>
 </body>
 </html>
+
 
 
 
