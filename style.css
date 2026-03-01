@@ -29,6 +29,12 @@ body{
 .logo.small img{
   width:55px;
 }
+
+.menu-btn{
+  font-size:18px;
+  line-height:1;
+}
+/* ===== 言語切替 ===== */
 .lang{
   position:fixed;
   top:20px;
@@ -49,25 +55,6 @@ body{
   cursor:pointer;
 }
 
-.menu-btn{
-  font-size:18px;
-  line-height:1;
-}
-/* ===== 言語切替 ===== */
-.lang{
-  position:fixed;
-  top:20px;
-  right:20px;
-  z-index:1000;
-}
-.lang a{
-  text-decoration:none;
-  font-size:14px;
-  padding:6px 12px;
-  border-radius:6px;
-  background:#2b5f73;
-  color:#fff;
-}
 
 /* ===== ファーストビュー ===== */
 .hero{
@@ -216,4 +203,10 @@ footer{
   font-size:18px;
   font-weight:bold;
   text-decoration:none;
+}
+@media(max-width:600px){
+  .menu{
+    top:50px;
+    right:10px;
+  }
 }
