@@ -62,6 +62,43 @@
 </footer>
 
 </div>
+<script>
+const logo = document.getElementById("logo");
+const menuBtn = document.getElementById("menuBtn");
+const menu = document.getElementById("menu");
 
+/* ロゴ縮小 */
+window.addEventListener("scroll",()=>{
+  if(window.scrollY>120){
+    logo.classList.add("small");
+  }else{
+    logo.classList.remove("small");
+  }
+});
+
+/* メニュー開閉 */
+menuBtn.addEventListener("click",()=>{
+  menu.style.display = menu.style.display==="block" ? "none" : "block";
+});
+
+/* スムーススクロール */
+
+document.querySelectorAll('.menu a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    const href = link.getAttribute('href');
+
+    // ページ内リンクだけスムーススクロール
+    if(href.startsWith("#")){
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if(target){
+        target.scrollIntoView({behavior:'smooth'});
+      }
+      menu.style.display="none";
+    }
+    // 他ページリンクはそのまま遷移（何もしない）
+  });
+});
+</script>
 </body>
 </html>
