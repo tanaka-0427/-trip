@@ -7,9 +7,7 @@ body{
   background:url("images/bg.png") center/cover no-repeat;
   padding-bottom:80px;
 }
-.menu.always {
-  display: flex;
-}
+
 .container{
   max-width:900px;
   margin:auto;
