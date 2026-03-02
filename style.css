@@ -133,7 +133,23 @@ h2{
   opacity:.9;
   transform:translateY(-2px);
 }
+input, textarea{
+  width:100%;
+  padding:12px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
 
+button.cta-btn{
+  background:#d45a2a;
+  color:#fff;
+  border:none;
+  padding:15px 30px;
+  font-size:18px;
+  border-radius:8px;
+  cursor:pointer;
+}
 /* ===== フッター ===== */
 footer{
   margin-top:50px;
