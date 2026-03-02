@@ -126,22 +126,27 @@ menuBtn.addEventListener("click",()=>{
 });
 
 /* スムーススクロール */
+
 document.querySelectorAll('.menu a').forEach(link=>{
   link.addEventListener('click',e=>{
-    e.preventDefault();
-    const target=document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({behavior:'smooth'});
-    menu.style.display="none";
+    const href = link.getAttribute('href');
+
+    // ページ内リンクだけスムーススクロール
+    if(href.startsWith("#")){
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if(target){
+        target.scrollIntoView({behavior:'smooth'});
+      }
+      menu.style.display="none";
+    }
+    // 他ページリンクはそのまま遷移（何もしない）
   });
-});
-  document.addEventListener("click",(e)=>{
-  if(!menu.contains(e.target) && !menuBtn.contains(e.target)){
-    menu.style.display="none";
-  }
 });
 </script>
 </body>
 </html>
+
 
 
 
